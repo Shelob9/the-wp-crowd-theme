@@ -16,11 +16,13 @@
     }
 }
 header {
+    position: relative;
     .logo {
         padding-bottom: 40px;
         padding-top: 20px;
     }
     nav {
+        padding-bottom: 10px;
         ul {
             list-style: none;
             margin: 0;
@@ -51,6 +53,40 @@ header {
                     }
                 }
             }
+        }
+    }
+    .search {
+        font-size: 1.5em;
+        text-align: right;
+        span.search-toggle {
+            cursor: pointer;
+        }
+    }
+    div.search-box {
+        background: darken( $gray-base, 20% );
+        left: 0;
+        opacity: 0;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+
+        transition: all 0.5s;
+        transform: translateY(50px);
+        form {
+            input {
+                display: inline-block;
+                line-height: 27px;
+                padding-left: 10px;
+                vertical-align: top;
+                width: 50%;
+            }
+        }
+        &.active {
+            opacity: 1;
+            transform: translateY(0px);
+            z-index: 100000;
         }
     }
 }

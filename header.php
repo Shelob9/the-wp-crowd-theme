@@ -27,17 +27,32 @@
 				</div>
 			</div>
 		</div>
-		<header class="container">
-			<div class="row">
-				<div class="col-xs-12 col-md-4 text-center logo">
-					<a href="<?php echo get_bloginfo('wpurl'); ?>">
-						<img src="<?php echo get_template_directory_uri() . '/img/logo.jpg'; ?>" alt="The WP Crowd Podcast" class="img-responsive" />
-					</a>
+		<header class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-4 text-center logo">
+						<a href="<?php echo get_bloginfo('wpurl'); ?>">
+							<img src="<?php echo get_template_directory_uri() . '/img/logo.jpg'; ?>" alt="The WP Crowd Podcast" class="img-responsive" />
+						</a>
+					</div>
+				</div>
+				<div class="row">
+					<nav class="col-xs-9">
+						<?php wp_nav_menu( array( 'theme_location' => 'header', 'container' => '' ) ); ?>
+					</nav>
+					<div class="col-xs-3 search">
+						<span class="search-toggle closed">
+							<i class="fa fa-search"></i> Search
+						</span>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<nav class="col-xs-12">
-					<?php wp_nav_menu( array( 'theme_location' => 'header', 'container' => '' ) ); ?>
-				</nav>
+			<div class="search-box">
+				<div class="container">
+					<form action="<?php echo get_bloginfo('wpurl'); ?>">
+						<input type="text" name="s" placeholder="Search The Crowd" />
+						<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
 			</div>
 		</header>
