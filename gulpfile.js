@@ -23,6 +23,13 @@ var jsFileList = [
 	'assets/js/theme-script.js',
 ];
 
+var angularList = [
+	'node_modules/angular/angular.min.js',
+	'node_modules/angular-resource/angular-resource.min.js',
+	'assets/js/ng-app.js'
+];
+
+
 gulp.task('sass', function() {
 	gulp.src('./assets/scss/*.scss')
 	.pipe(sourcemaps.init())
@@ -32,6 +39,11 @@ gulp.task('sass', function() {
 	.pipe(gulp.dest('./build/css'));
 });
 
+gulp.task('font', function(){
+	gulp.src('node_modules/font-awesome/fonts/**/*')
+		.pipe(gulp.dest('./build/fonts'));
+});
+
 gulp.task('js', function(){
 	return gulp.src(jsFileList)
 	.pipe(concat({ path:'scripts.js' }))
@@ -39,7 +51,16 @@ gulp.task('js', function(){
 	.pipe(gulp.dest('./build/js'));
 });
 
+gulp.task('angular', function(){
+	return gulp.src(angularList)
+		.pipe(concat({ path:'ng-app.js' }))
+		//.pipe(uglify())
+		.pipe(gulp.dest('./build/js'));
+});
+
 gulp.task('default', function(){
 	gulp.watch( './assets/scss/*.scss', ['sass'] );
+	gulp.watch( './assets/scss/*/*.scss', ['sass'] );
 	gulp.watch( jsFileList, ['js'] );
+	gulp.watch( angularList, ['angular'] );
 });
