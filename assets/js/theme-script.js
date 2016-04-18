@@ -3,7 +3,10 @@ var my_theme = my_theme || {};
 my_theme.run = function($) {
 	
 	$(document).ready(function(){
-		console.log('My Starter Theme');
+		$('.search-toggle').on('click', function(e){
+			e.preventDefault();
+			$('.search-box').toggleClass('active');
+		});
 	});
 	
 	
