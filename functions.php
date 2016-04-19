@@ -21,12 +21,21 @@ class my_theme {
 	}
 	function theme_setup() {
 		add_theme_support( 'title-tag' );
+		add_theme_support( 'post-thumbnails' );
 		register_nav_menus(
 			array(
 				'header' => "Header Menu",
 				'footer' => "Footer Menu",
 			)
 		);
+		register_sidebar(array(
+			'id' => 'main_sidebar',
+			'name' => __( 'Main Sidebar' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widgettitle">',
+			'after_title'   => '</h4>'
+		));
 	}
 }
 

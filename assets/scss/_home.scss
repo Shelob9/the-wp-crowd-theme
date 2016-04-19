@@ -1,5 +1,102 @@
 .home-hero {
+    margin-bottom: 40px;
     min-height: 300px;
     position: relative;
     z-index: 100;
+    .featured-item {
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        color: white;
+        height: 300px;
+        position: relative;
+        span {
+            background: rgba( 0,0,0,0.5 );
+            bottom: 0;
+            display: block;
+            font-size: 2.75em;
+            left: 0;
+            margin: 0;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+        }
+        &:hover {
+            color: $gray-lighter;
+            text-decoration: none;
+        }
+    }
+    &.podcast {
+        min-height: 100px;
+        margin-bottom: 0;
+        margin-top: 40px;
+        padding-bottom: 30px;
+        h4 {
+            color: white;
+            font-size: 2em;
+            font-weight: 200;
+            margin: 20px 0;
+            text-transform: uppercase;
+        }
+        .featured-item { height: 200px; }
+    }
+}
+
+.latest {
+    h3 {
+        font-size: 2.75em;
+        font-weight: 200;
+        margin: 0 0 30px 0;
+    }
+    .first-post {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        display: block;
+        margin-bottom: 50px;
+        position: relative;
+        height: 200px;
+        width: 100%;
+        span {
+            background: rgba(255,255,255,0.85);
+            bottom: 0;
+            color: $gray-base;
+            display: block;
+            font-size: 1.5em;
+            font-weight: 200;
+            left: 5%;
+            padding: 0 10px;
+            position: absolute;
+            width: 90%;
+        }
+        &:hover {
+            span {
+                color: $brand-primary;
+            }
+        }
+    }
+    article {
+        height: 175px;
+        margin: 10px 0;
+        h2 {
+            font-size: 1.5em;
+            font-weight: 200;
+            margin: 0 0 5px 0;
+            a {
+                color: $gray-base;
+                &:hover {
+                    color: $brand-primary;
+                    text-decoration: none;
+                }
+            }
+        }
+        .meta {
+
+        }
+    }
+    &.podcasts {
+        article {
+            h2 { margin: 10px 0 0 0; }
+        }
+    }
 }
